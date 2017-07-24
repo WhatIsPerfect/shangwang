@@ -1,0 +1,31 @@
+{
+  "name": "mmall-fe",
+  "version": "1.0.0",
+  "description": "mall前端",
+  "main": "index.js",
+  "scripts": {
+
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhatIsPerfect/shangwang.git"
+  },
+  "author": "wanghanlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhatIsPerfect/shangwang/issues"
+  },
+  "homepage": "https://github.com/WhatIsPerfect/shangwang#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
+
