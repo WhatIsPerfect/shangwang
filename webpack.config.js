@@ -2,10 +2,11 @@ const path = require('path');
 var webpack=require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var getHtmlConfig=function(name){
+var getHtmlConfig=function(name,title){
     return {
         filename:'view/'+name+'.html',
         template:'./src/view/'+name+'.html',
+        title:title,
         inject:'true',
         hash:'true',
         chunks:['common',name]
@@ -14,9 +15,10 @@ var getHtmlConfig=function(name){
 //webpack config
 const config = {
     entry:{
-        'common':['./src/page/common/index.js'],
+        'common':['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088'],
         'index':['./src/page/index/index.js'],
-        'login':['./src/page/login/login.js']
+        'login':['./src/page/login/login.js'],
+        'login':['./src/page/result/index.js']
     },
     output: {
         path: path.resolve('./dist'),
@@ -37,7 +39,7 @@ const config = {
                 loader: 'url-loader',
                 query: {
                     limit: 8000,
-                    <!-- Ğ¡ÓÚ8kµÄ×ª»¯ÎªBase64 -->
+                    <!-- Ğ¡ï¿½ï¿½8kï¿½ï¿½×ªï¿½ï¿½ÎªBase64 -->
                     name: 'source/[name].[hash:7].[ext]'
                 }
             },
@@ -49,24 +51,38 @@ const config = {
                     limit: 8000,
                     name: 'font/[name].[hash:7].[ext]'
                 }
+            },
+            {
+                test: /\.string$/,
+                use: {
+                    loader: 'html-loader', options: {
+                        attrs: [':data-src']
+                    }
+                }
             }
         ]
     },
-    devServer: {
-        historyApiFallback: true,
-        inline: true,//×¢Òâ£º²»Ğ´hot: true£¬·ñÔòä¯ÀÀÆ÷ÎŞ·¨×Ô¶¯¸üĞÂ£»Ò²²»ÒªĞ´colors:true£¬progress:trueµÈ£¬webpack2.xÒÑ²»Ö§³ÖÕâĞ©
-    },
+  /* resolve:{
+        alias:{
+            util: __dirname+'/src/util',
+            image: __dirname+'/src/image',
+            page: __dirname+'/src/page',
+            service: __dirname+'/src/service'
+        }
+
+    },*/
     plugins:[
-        //Í¨ÓÃÄ£¿éµ½JS/base.js
+        //Í¨ï¿½ï¿½Ä£ï¿½éµ½JS/base.js
         new webpack.optimize.CommonsChunkPlugin({
             name:'common',
             filename:'JS/base.js'
         }),
-        //cssµ¥¶À´ò°ü
+        //cssï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         new ExtractTextPlugin("css/[name].css"),
-        //¶ÔHTMLµÄµ¥¶À´¦Àí
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        //ï¿½ï¿½HTMLï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        new HtmlWebpackPlugin(getHtmlConfig('index','é¦–é¡µ')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','ç”¨æˆ·ç™»å½•')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','æ“ä½œç»“æœ')),
     ]
 
 };

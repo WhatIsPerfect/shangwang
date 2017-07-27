@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "mall前端",
   "main": "index.js",
-  "scripts": {
-
-},
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WhatIsPerfect/shangwang.git"
@@ -26,6 +24,11 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2",
+    "hogan.js": "^3.0.2",
+    "string-loader": "0.0.1"
   }
 }
-

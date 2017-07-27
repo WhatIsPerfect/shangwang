@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <%= require('html-loader!./layout/html-common.html') %>
+    <title>mmall 电商平台</title>
 </head>
 <body>
-helloe index d
-<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
-<script src="http://localhost:8088/webpack-dev-server.js"></script>
+<%= require('html-loader!./layout/nav.html') %>
+<%= require('html-loader!./layout/header.html') %>
+<div class="page-wrap w">
+    <%= require('html-loader!./layout/nav-side.html') %>
+    <div class="content with-nav">test</div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>
