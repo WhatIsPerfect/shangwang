@@ -18,7 +18,12 @@ const config = {
         'common':['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088'],
         'index':['./src/page/index/index.js'],
         'login':['./src/page/login/login.js'],
-        'login':['./src/page/result/index.js']
+        'register':['./src/page/register/register.js'],
+        'pass-reset':['./src/page/pass-reset/index.js'],
+        'user-center':['./src/page/user-center/index.js'],
+        'user-center-update':['./src/page/user-center-update/index.js'],
+        'user-pass-update':['./src/page/user-pass-update/index.js'],
+        'result':['./src/page/result/index.js']
     },
     output: {
         path: path.resolve('./dist'),
@@ -82,7 +87,12 @@ const config = {
         //��HTML�ĵ�������
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
         new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
-        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('register','用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('pass-reset','找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
     ]
 
 };

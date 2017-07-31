@@ -21,18 +21,18 @@ label{
 input[type='checkbox']{
     cursor:pointer;
 }
-/*¶¨¿í²¼¾Ö*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .w{
     width:1080px;
     margin:0 auto;
     position:relative;
     overflow: hidden;
 }
-/*qÈ«¾ÖÍ¨ÓÃÑùÊ½*/
+/*qÈ«ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ê½*/
 .hide{
     display:none;
 }
-/*³¬Á´ÑùÊ½*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½*/
 .link{
     color:#999;
     cursor:pointer;
@@ -45,7 +45,7 @@ input[type='checkbox']{
     color:#999;
     text-decoration: none;
 }
-/*btnÑùÊ½*/
+/*btnï¿½ï¿½Ê½*/
 .btn{
     display: inline-block;
     padding:0 20px;
@@ -75,4 +75,21 @@ input[type='checkbox']{
     border-radius:5px;
     background: url("../../image/icon/loading.gif") no-repeat;
     opacity:.6;
+}
+/*panel*/
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color:#666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
+    overflow: hidden;
 }

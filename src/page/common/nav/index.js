@@ -5,7 +5,7 @@ require('./index.css');
 var _mm=require('../../../util/mm.js');
 var _user=require('../../../service/user-server.js');
 var _cart=require('../../../service/cart-server.js');
-//µ¼º½
+//ï¿½ï¿½ï¿½ï¿½
 var nav={
     init:function(){
         this.bindEvent();
@@ -14,15 +14,15 @@ var nav={
         return this;
     },
     bindEvent:function(){
-        //µÇÂ¼µã»÷ÊÂ¼ş
+        //ç™»é™†
         $('.js-login').click(function(){
             _mm.dologin();
         });
-        //×¢²áµã»÷ÊÂ¼ş
+        //æ³¨å†Œ
         $('.js-register').click(function(){
             window.location.href='./register.html';
         });
-        //ÍË³öµã»÷ÊÂ¼ş
+        //é€€å‡º
         $('.js-logout').click(function(){
             _user.logout(function(res){
                 window.location.reload();
@@ -31,16 +31,16 @@ var nav={
             });
         });
     },
-    //¼ÓÔØÓÃ»§ĞÅÏ¢
+    //ç™»é™†æ˜¾ç¤º
     loadUserInfo:function(){
         _user.checkLogin(function(res){
-            $('.user.not-login').hide().siblings('.user.login').show()
+            $('.user .not-login').hide().siblings('.user .login').show()
                 . find('.username').text(res.username);
         },function(errMsg){
 
         });
     },
-    //¼ÓÔØ¹ºÎï³µÊıÁ¿
+    //è´­ç‰©è½¦æ•°é‡
     loadCartCount:function(){
         _cart.getCartCount(function(res){
             $('.nav .cart-cont').text(res||0);
